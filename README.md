@@ -29,7 +29,33 @@ The Autonomous AI Agent enables AI to interact with your computer on your behalf
 - Windows OS (Recommended)
 - Git LFS (for downloading models)
 
-### Setup
+### Quick Start (Automated)
+
+**Windows:**
+```powershell
+# 1. Install dependencies
+install.bat
+
+# 2. (Optional) Download Qwen model
+setup_model.bat
+
+# 3. Start the application
+start.bat
+```
+
+**Linux/Mac:**
+```bash
+# 1. Install dependencies
+./install.sh
+
+# 2. (Optional) Download Qwen model
+./setup_model.sh
+
+# 3. Start the application
+./start.sh
+```
+
+### Manual Setup
 
 1. Clone the repository:
    ```powershell
@@ -62,6 +88,20 @@ The Autonomous AI Agent enables AI to interact with your computer on your behalf
    ```powershell
    python main.py
    ```
+
+### Testing Model Installation
+
+To verify that the Qwen model was downloaded correctly:
+
+**Windows:**
+```powershell
+test_model.bat
+```
+
+**Linux/Mac:**
+```bash
+./test_model.sh
+```
 
 ## Usage
 
