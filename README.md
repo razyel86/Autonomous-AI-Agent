@@ -27,6 +27,7 @@ The Autonomous AI Agent enables AI to interact with your computer on your behalf
 
 - Python 3.8+
 - Windows OS (Recommended)
+- Git LFS (for downloading models)
 
 ### Setup
 
@@ -43,7 +44,21 @@ The Autonomous AI Agent enables AI to interact with your computer on your behalf
 
 3. Create a Google API key for Gemini at [Google AI Studio](https://aistudio.google.com). Set it as an environment variable on your system named GEMINI_API_KEY.
 
-4. Run the application:
+4. (Optional) Download Qwen2.5-Omni-3B model for local inference:
+   
+   **Windows:**
+   ```powershell
+   setup_model.bat
+   ```
+   
+   **Linux/Mac:**
+   ```bash
+   ./setup_model.sh
+   ```
+   
+   This will clone the Qwen2.5-Omni-3B model from Hugging Face into the `models/` directory.
+
+5. Run the application:
    ```powershell
    python main.py
    ```
