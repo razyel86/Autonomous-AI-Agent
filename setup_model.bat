@@ -31,6 +31,13 @@ if not exist "models" (
     )
 )
 
+REM Verify models directory exists before entering
+if not exist "models" (
+    echo Error: Models directory does not exist
+    endlocal
+    exit /b 1
+)
+
 REM Change to models directory
 pushd models
 if %errorlevel% neq 0 (

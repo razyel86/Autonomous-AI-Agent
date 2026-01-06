@@ -27,8 +27,15 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
 # Create models directory if it doesn't exist
-mkdir -p models || { echo "Error: Failed to create models directory"; exit 1; }
-cd models || { echo "Error: Failed to enter models directory"; exit 1; }
+if ! mkdir -p models; then
+    echo "Error: Failed to create models directory"
+    exit 1
+fi
+
+if ! cd models; then
+    echo "Error: Failed to enter models directory"
+    exit 1
+fi
 
 # Check if model already exists
 if [ -d "Qwen2.5-Omni-3B" ]; then
