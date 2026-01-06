@@ -2,7 +2,7 @@
 REM Startup script for Autonomous AI Agent
 REM This script starts the AI Agent application
 
-setlocal
+setlocal enabledelayedexpansion
 
 echo ========================================
 echo Autonomous AI Agent - Starting
