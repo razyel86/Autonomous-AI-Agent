@@ -22,8 +22,22 @@ echo Initializing git-lfs...
 git lfs install
 
 REM Create models directory if it doesn't exist
-if not exist "models" mkdir models
+if not exist "models" (
+    mkdir models
+    if %errorlevel% neq 0 (
+        echo Error: Failed to create models directory
+        endlocal
+        exit /b 1
+    )
+)
+
+REM Change to models directory
 pushd models
+if %errorlevel% neq 0 (
+    echo Error: Failed to enter models directory
+    endlocal
+    exit /b 1
+)
 
 REM Check if model already exists
 if exist "Qwen2.5-Omni-3B" (
@@ -41,6 +55,16 @@ echo This may take a while depending on your internet connection...
 echo.
 
 git clone https://huggingface.co/Qwen/Qwen2.5-Omni-3B
+if %errorlevel% neq 0 (
+    echo.
+    echo ========================================
+    echo Error: Failed to clone the model repository
+    echo Please check your internet connection and try again
+    echo ========================================
+    popd
+    endlocal
+    exit /b 1
+)
 
 popd
 
