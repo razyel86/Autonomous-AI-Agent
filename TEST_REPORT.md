@@ -48,8 +48,8 @@ Test Summary
 **4. Model Size Validation**
 - Status: ✓ PASS
 - Total files: 5
-- Total size: 0.20 GB (demo/mock model)
-- Note: Actual Qwen2.5-Omni-3B model is approximately 6-8 GB
+- Total size: 0.20 GB
+- **Note**: This was a demonstration using a mock model structure to show test functionality. The actual Qwen2.5-Omni-3B model from Hugging Face is approximately 6-8 GB and will contain ~15-20 files.
 
 **5. Git LFS Tracking**
 - Status: ✓ PASS (informational)
@@ -58,6 +58,14 @@ Test Summary
 ## Conclusion
 
 ✅ **All model tests passed successfully!**
+
+**Important Note:** The test results shown above were generated using a mock model structure created specifically to demonstrate the test script functionality. This was done to verify that the test scripts work correctly without requiring users to download the full 6-8 GB Qwen2.5-Omni-3B model.
+
+When you download the actual model using `setup_model.sh` or `setup_model.bat`, the test will show:
+- Total size: ~6-8 GB
+- Total files: ~15-20 files
+- All actual model weight files (.safetensors)
+- Git LFS tracking of large binary files
 
 The test suite correctly:
 - Detects model presence
