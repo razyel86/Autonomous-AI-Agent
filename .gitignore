@@ -45,7 +45,6 @@ logs/
 
 # Models - Hugging Face models
 models/
-Qwen2.5-Omni-3B/
 *.bin
 *.safetensors
 *.msgpack

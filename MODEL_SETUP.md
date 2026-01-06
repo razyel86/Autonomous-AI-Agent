@@ -69,7 +69,19 @@ chmod +x setup_model.sh
 
 ## Model Usage
 
-> **Note**: This model download is optional. The current implementation of the Autonomous AI Agent uses Google's Gemini API. Integration with the Qwen model for local inference is planned for future development.
+> **Note**: This model download is currently optional for future development. The Autonomous AI Agent currently uses Google's Gemini API for AI-powered assistance. 
+> 
+> **When to download this model:**
+> - If you want to prepare for upcoming local inference features
+> - If you're interested in experimenting with the Qwen model independently
+> - If you plan to contribute to integrating local model support
+>
+> **Future benefits** (once integration is complete):
+> - No dependency on external API services
+> - Privacy: All processing done locally
+> - No API costs or rate limits
+> - Faster response times (with appropriate hardware)
+> - Offline operation capability
 
 ## More Information
 

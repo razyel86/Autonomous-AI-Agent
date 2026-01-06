@@ -22,6 +22,9 @@ fi
 echo "Initializing git-lfs..."
 git lfs install
 
+# Store original directory
+ORIGINAL_DIR=$(pwd)
+
 # Create models directory if it doesn't exist
 mkdir -p models
 cd models
@@ -30,6 +33,7 @@ cd models
 if [ -d "Qwen2.5-Omni-3B" ]; then
     echo "Model directory already exists. Skipping download."
     echo "To re-download, delete the models/Qwen2.5-Omni-3B directory first."
+    cd "$ORIGINAL_DIR"
     exit 0
 fi
 
@@ -40,6 +44,8 @@ echo "This may take a while depending on your internet connection..."
 echo ""
 
 git clone https://huggingface.co/Qwen/Qwen2.5-Omni-3B
+
+cd "$ORIGINAL_DIR"
 
 echo ""
 echo "========================================"

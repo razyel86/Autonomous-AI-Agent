@@ -1,6 +1,8 @@
 @echo off
 REM Setup script for downloading Qwen2.5-Omni-3B model from Hugging Face
 
+setlocal
+
 echo ========================================
 echo Qwen2.5-Omni-3B Model Setup
 echo ========================================
@@ -11,6 +13,7 @@ git lfs version >nul 2>&1
 if %errorlevel% neq 0 (
     echo Error: git-lfs is not installed.
     echo Please install git-lfs first from https://git-lfs.github.com/
+    endlocal
     exit /b 1
 )
 
@@ -20,12 +23,14 @@ git lfs install
 
 REM Create models directory if it doesn't exist
 if not exist "models" mkdir models
-cd models
+pushd models
 
 REM Check if model already exists
 if exist "Qwen2.5-Omni-3B" (
     echo Model directory already exists. Skipping download.
     echo To re-download, delete the models\Qwen2.5-Omni-3B directory first.
+    popd
+    endlocal
     exit /b 0
 )
 
@@ -37,8 +42,12 @@ echo.
 
 git clone https://huggingface.co/Qwen/Qwen2.5-Omni-3B
 
+popd
+
 echo.
 echo ========================================
 echo Model download completed successfully!
 echo Model location: models\Qwen2.5-Omni-3B
 echo ========================================
+
+endlocal
