@@ -16,6 +16,8 @@ The project includes several automation scripts to simplify installation, setup,
 | `setup_model.sh` | Linux/Mac | Download Qwen2.5-Omni-3B model |
 | `test_model.bat` | Windows | Test model installation |
 | `test_model.sh` | Linux/Mac | Test model installation |
+| `test_startup.bat` | Windows | Test application startup components |
+| `test_startup.sh` | Linux/Mac | Test application startup components |
 
 ## Installation Scripts
 
@@ -200,6 +202,81 @@ Test Summary
 The Qwen2.5-Omni-3B model is ready for future integration.
 ```
 
+## Startup Testing Scripts
+
+### test_startup.bat / test_startup.sh / test_startup.py
+
+These scripts verify that the application components are ready for startup without actually launching the GUI.
+
+**Features:**
+- Tests Python version (3.8+ requirement)
+- Verifies all 13 dependencies are installed
+- Checks project file structure
+- Tests module imports
+- Validates environment configuration
+- Confirms Flask readiness
+
+**Usage:**
+
+Windows:
+```powershell
+test_startup.bat
+```
+
+Linux/Mac:
+```bash
+./test_startup.sh
+```
+
+**What it tests:**
+1. **Python Version**: Ensures Python 3.8+ is installed
+2. **Dependencies**: Verifies all 13 packages from requirements.txt
+3. **Project Structure**: Checks for 6 essential files
+4. **Application Imports**: Tests core module imports
+5. **Environment**: Validates GEMINI_API_KEY and paths
+6. **Flask App**: Confirms Flask framework is ready
+
+**Example Output (Success):**
+```
+╔==========================================================╗
+║          AUTONOMOUS AI AGENT - STARTUP TEST             ║
+╚==========================================================╝
+
+============================================================
+STARTUP TEST SUMMARY
+============================================================
+✓ PASS: Python Version
+✓ PASS: Dependencies
+✓ PASS: Project Structure
+✓ PASS: Application Imports
+✓ PASS: Environment
+✓ PASS: Flask App Creation
+
+Total: 6 tests
+Passed: 6
+Failed: 0
+
+✓ All startup tests passed!
+
+The application is ready to start.
+Run ./start.sh (Linux/Mac) or start.bat (Windows) to launch.
+```
+
+**Example Output (Failure):**
+```
+============================================================
+Testing Dependencies
+============================================================
+  ❌ Flask                     - NOT FOUND
+  ❌ Flask-SocketIO            - NOT FOUND
+  ...
+
+Missing packages: Flask, Flask-SocketIO, ...
+Run ./install.sh or install.bat to install dependencies
+```
+
+See [STARTUP_TEST_REPORT.md](STARTUP_TEST_REPORT.md) for detailed test results.
+
 ## Complete Workflow
 
 ### First Time Setup
@@ -240,7 +317,16 @@ The Qwen2.5-Omni-3B model is ready for future integration.
    ./test_model.sh
    ```
 
-5. **Start the application:**
+5. **(Optional) Test startup:**
+   ```bash
+   # Windows
+   test_startup.bat
+   
+   # Linux/Mac
+   ./test_startup.sh
+   ```
+
+6. **Start the application:**
    ```bash
    # Windows
    start.bat

@@ -103,6 +103,33 @@ test_model.bat
 ./test_model.sh
 ```
 
+### Testing Startup Components
+
+To verify that the application is ready to start:
+
+**Windows:**
+```powershell
+test_startup.bat
+```
+
+**Linux/Mac:**
+```bash
+./test_startup.sh
+```
+
+This will check:
+- Python version (3.8+)
+- All dependencies installed
+- Project file structure
+- Module imports
+- Environment configuration
+- Flask readiness
+
+**Linux/Mac:**
+```bash
+./test_model.sh
+```
+
 ## Usage
 
 1. Start the application
