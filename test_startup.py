@@ -16,7 +16,7 @@ def test_python_version():
     print("=" * 60)
     
     version = sys.version_info
-    print(f"Python version: {version.major}.{version.minor}.{version.major}")
+    print(f"Python version: {version.major}.{version.minor}.{version.micro}")
     
     if version >= (3, 8):
         print("✓ PASS: Python 3.8+ requirement met")

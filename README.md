@@ -125,11 +125,6 @@ This will check:
 - Environment configuration
 - Flask readiness
 
-**Linux/Mac:**
-```bash
-./test_model.sh
-```
-
 ## Usage
 
 1. Start the application
