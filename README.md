@@ -27,8 +27,35 @@ The Autonomous AI Agent enables AI to interact with your computer on your behalf
 
 - Python 3.8+
 - Windows OS (Recommended)
+- Git LFS (for downloading models)
 
-### Setup
+### Quick Start (Automated)
+
+**Windows:**
+```powershell
+# 1. Install dependencies
+install.bat
+
+# 2. (Optional) Download Qwen model
+setup_model.bat
+
+# 3. Start the application
+start.bat
+```
+
+**Linux/Mac:**
+```bash
+# 1. Install dependencies
+./install.sh
+
+# 2. (Optional) Download Qwen model
+./setup_model.sh
+
+# 3. Start the application
+./start.sh
+```
+
+### Manual Setup
 
 1. Clone the repository:
    ```powershell
@@ -43,10 +70,60 @@ The Autonomous AI Agent enables AI to interact with your computer on your behalf
 
 3. Create a Google API key for Gemini at [Google AI Studio](https://aistudio.google.com). Set it as an environment variable on your system named GEMINI_API_KEY.
 
-4. Run the application:
+4. (Optional) Download Qwen2.5-Omni-3B model for local inference:
+   
+   **Windows:**
+   ```powershell
+   setup_model.bat
+   ```
+   
+   **Linux/Mac:**
+   ```bash
+   ./setup_model.sh
+   ```
+   
+   This will clone the Qwen2.5-Omni-3B model from Hugging Face into the `models/` directory.
+
+5. Run the application:
    ```powershell
    python main.py
    ```
+
+### Testing Model Installation
+
+To verify that the Qwen model was downloaded correctly:
+
+**Windows:**
+```powershell
+test_model.bat
+```
+
+**Linux/Mac:**
+```bash
+./test_model.sh
+```
+
+### Testing Startup Components
+
+To verify that the application is ready to start:
+
+**Windows:**
+```powershell
+test_startup.bat
+```
+
+**Linux/Mac:**
+```bash
+./test_startup.sh
+```
+
+This will check:
+- Python version (3.8+)
+- All dependencies installed
+- Project file structure
+- Module imports
+- Environment configuration
+- Flask readiness
 
 ## Usage
 
